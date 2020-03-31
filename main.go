@@ -21,6 +21,10 @@ func main() {
 	for {
 		fmt.Print("What is the current temperature in " + originUnit + " ? ")
 
+		if len(os.Args) != 2 {
+			printError(errInvalidArguments)
+		}
+
 		fmt.Print("Would you like to convert another temperature ? (y/n) ")
 
 		if shouldConvertAgain != "Y" {
