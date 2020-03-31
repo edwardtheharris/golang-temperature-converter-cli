@@ -25,6 +25,7 @@ func main() {
 			printError(errInvalidArguments)
 		}
 
+		originUnit = string.ToUpper(os.Args[1])
 		fmt.Print("Would you like to convert another temperature ? (y/n) ")
 
 		if shouldConvertAgain != "Y" {
