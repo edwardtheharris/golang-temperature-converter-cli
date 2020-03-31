@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"os"
+	"strings"
 )
 
 var originUnit string
@@ -25,7 +26,8 @@ func main() {
 			printError(errInvalidArguments)
 		}
 
-		originUnit = string.ToUpper(os.Args[1])
+		originUnit = strings.ToUpper(os.Args[1])
+
 		fmt.Print("Would you like to convert another temperature ? (y/n) ")
 
 		if shouldConvertAgain != "Y" {
