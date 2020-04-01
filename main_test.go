@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"go/ast"
 	"go/parser"
@@ -16,6 +17,8 @@ import (
 )
 
 var binaryName = "tempconverterTestBinary"
+var errInvalidArguments = errors.New("Invalid arguments")
+var errReadingInput = errors.New("Error reading input")
 
 func TestMain(m *testing.M) {
 	build := exec.Command("go", "build", "-o", binaryName)
